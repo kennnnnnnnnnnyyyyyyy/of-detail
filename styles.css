@@ -1,0 +1,245 @@
+/* 重置默认样式 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Microsoft YaHei', Arial, sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* 顶部状态栏 */
+.status-bar {
+    background-color: #e8f5e8;
+    height: 5vh; /* 网页高度的1/20 */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* 改为左对齐 */
+    padding-left: 20px; /* 添加左边距 */
+    border-bottom: 1px solid #d4edda;
+}
+
+.status-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+    vertical-align: middle;
+}
+
+.status-text {
+    color: #28a745;
+    font-size: 1rem;
+    font-weight: 600;
+}
+
+/* Tab导航 */
+.tab-nav {
+    background-color: white;
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.tab-button {
+    background: none;
+    border: none;
+    padding: 15px 20px;
+    font-size: 1rem;
+    color: #666;
+    cursor: pointer;
+    border-bottom: 3px solid transparent;
+    transition: all 0.3s ease;
+    margin-right: 10px;
+}
+
+.tab-button:hover {
+    color: #333;
+    background-color: #f8f9fa;
+}
+
+.tab-button.active {
+    color: #007bff;
+    border-bottom-color: #007bff;
+    font-weight: 600;
+}
+
+/* Tab内容区域 */
+.tab-content {
+    background-color: #f8f9fa;
+    min-height: calc(95vh - 60px); /* 减去状态栏和tab导航的高度 */
+}
+
+.tab-panel {
+    display: none;
+    height: calc(95vh - 60px); /* 设置固定高度 */
+    padding: 20px;
+}
+
+.tab-panel.active {
+    display: block;
+}
+
+/* PDF容器样式 */
+.pdf-container {
+    width: 100%;
+    height: calc(100% - 40px); /* 减去padding */
+    padding: 0;
+    margin: 0;
+    background-color: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
+    border: 1px solid #e9ecef;
+}
+
+.pdf-iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    margin: 0;
+    padding: 0;
+    border-radius: 12px;
+    background-color: white;
+}
+
+/* 文档内容样式（保留作为备用） */
+.document-content h2 {
+    color: #333;
+    font-size: 1.8rem;
+    margin-bottom: 20px;
+    padding-bottom: 10px;
+    border-bottom: 2px solid #007bff;
+}
+
+.content-text {
+    font-size: 1rem;
+    line-height: 1.8;
+    color: #444;
+}
+
+.content-text h3 {
+    color: #007bff;
+    font-size: 1.2rem;
+    margin: 20px 0 10px 0;
+    padding: 8px 12px;
+    background-color: #f8f9fa;
+    border-left: 4px solid #007bff;
+}
+
+.content-text p {
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.content-text br {
+    line-height: 1.5;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+    .status-bar {
+        height: 6vh;
+    }
+    
+    .status-text {
+        font-size: 0.9rem;
+    }
+    
+    .tab-nav {
+        padding: 0 15px;
+        overflow-x: auto;
+    }
+    
+    .tab-button {
+        padding: 12px 15px;
+        font-size: 0.9rem;
+        white-space: nowrap;
+    }
+    
+    .tab-panel {
+        height: calc(94vh - 60px); /* 调整移动设备高度 */
+        padding: 15px;
+    }
+    
+    .pdf-container {
+        height: calc(100% - 30px); /* 减少移动设备的padding */
+        border-radius: 8px;
+        box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+    }
+    
+    .pdf-iframe {
+        border-radius: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .tab-button {
+        padding: 10px 12px;
+        font-size: 0.8rem;
+    }
+    
+    .tab-panel {
+        height: calc(94vh - 55px); /* 进一步调整小屏幕高度 */
+        padding: 10px;
+    }
+    
+    .pdf-container {
+        height: calc(100% - 20px);
+        border-radius: 6px;
+    }
+    
+    .pdf-iframe {
+        border-radius: 6px;
+    }
+}
+
+/* 加载动画 */
+.loading {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 200px;
+    color: #666;
+}
+
+/* 滚动条样式 */
+.content-text::-webkit-scrollbar {
+    width: 8px;
+}
+
+.content-text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.content-text::-webkit-scrollbar-thumb {
+    background: #c1c1c1;
+    border-radius: 4px;
+}
+
+.content-text::-webkit-scrollbar-thumb:hover {
+    background: #a8a8a8;
+}
+
+
+/* 隐藏Manus悬浮标 */
+a[href*="manus.space"] {
+    display: none !important;
+}
+
+/* 隐藏包含"Made with Manus"文字的元素 */
+*:contains("Made with Manus") {
+    display: none !important;
+}
+
+/* 更通用的隐藏规则 */
+[class*="manus"], [id*="manus"] {
+    display: none !important;
+}
+

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Offer</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- 顶部状态栏 -->
+    <header class="status-bar">
+        <img src="check-icon.png" alt="已接受" class="status-icon">
+        <div class="status-text">已接受</div>
+    </header>
+
+    <!-- Tab导航 -->
+    <nav class="tab-nav">
+        <button class="tab-button active" data-tab="employment">录用通知函</button>
+        <button class="tab-button" data-tab="option">期权信息通知函</button>
+    </nav>
+
+    <!-- Tab内容 -->
+    <main class="tab-content">
+        <!-- 录用通知函内容 -->
+        <div id="employment-tab" class="tab-panel active">
+            <div class="pdf-container">
+                <iframe 
+                    src="录用通知函.pdf" 
+                    class="pdf-iframe"
+                    title="录用通知函">
+                    <p>您的浏览器不支持PDF预览，请<a href="录用通知函.pdf" target="_blank">点击这里下载PDF文件</a>。</p>
+                </iframe>
+            </div>
+        </div>
+
+        <!-- 期权信息通知函内容 -->
+        <div id="option-tab" class="tab-panel">
+            <div class="pdf-container">
+                <iframe 
+                    src="期权信息通知函_OptionInformationLetter.pdf" 
+                    class="pdf-iframe"
+                    title="期权信息通知函">
+                    <p>您的浏览器不支持PDF预览，请<a href="期权信息通知函_OptionInformationLetter.pdf" target="_blank">点击这里下载PDF文件</a>。</p>
+                </iframe>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
+
